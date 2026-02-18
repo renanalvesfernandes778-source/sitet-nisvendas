@@ -23,8 +23,8 @@ export default function LandingPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToOrder = () => {
-    document.getElementById("order-form")?.scrollIntoView({ behavior: "smooth" });
+  const handleCheckout = () => {
+    window.location.href = "https://app.coinzz.com.br/checkout/2-unidade-tzlyj-0";
   };
 
   return (
@@ -42,7 +42,7 @@ export default function LandingPage() {
             <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">Benefits</a>
             <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">Features</a>
             <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Reviews</a>
-            <Button onClick={scrollToOrder} className="bg-accent hover:bg-accent/90 text-white font-bold rounded-full px-6">
+            <Button onClick={handleCheckout} className="bg-accent hover:bg-accent/90 text-white font-bold rounded-full px-6">
               Buy Now
             </Button>
           </div>
@@ -56,7 +56,7 @@ export default function LandingPage() {
                 <a href="#benefits" className="text-lg font-medium">Benefits</a>
                 <a href="#features" className="text-lg font-medium">Features</a>
                 <a href="#reviews" className="text-lg font-medium">Reviews</a>
-                <Button onClick={scrollToOrder} className="bg-accent text-white font-bold w-full">
+                <Button onClick={handleCheckout} className="bg-accent text-white font-bold w-full">
                   Buy Now
                 </Button>
               </div>
@@ -89,16 +89,16 @@ export default function LandingPage() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-bold text-gray-900">R$136,50</span>
-                  <span className="text-lg text-gray-400 line-through">R$273,00</span>
+                  <span className="text-lg text-gray-400 line-through">R$199,80</span>
                 </div>
                 <div className="bg-red-100 text-red-600 px-3 py-1 rounded-md font-bold text-sm uppercase tracking-wide animate-pulse-slow">
-                  50% OFF - Limited Time
+                  Economize R$63,30
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  onClick={scrollToOrder}
+                  onClick={handleCheckout}
                   size="lg" 
                   className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-1 transition-all"
                 >
