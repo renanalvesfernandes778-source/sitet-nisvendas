@@ -6,11 +6,14 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { LeadForm } from "@/components/LeadForm";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
-// Assets
-import heroImage from "@assets/S8f86edd088344e7584d3ef4a960af7eam_800x_1771375984703.webp";
-import detail1 from "@assets/S463b89bd82a146a6bc9b372d3db10813w_800x_1771375984707.webp";
-import detail2 from "@assets/image_1771376016224.png";
-import detail3 from "@assets/image_1771376027942.png";
+// Assets - Using public/images for Vercel compatibility
+const heroImage = "/images/15_1771449544431.jpg";
+const detail1 = "/images/06_1771449544432.jpg";
+const detail2 = "/images/02_1771449544432.png";
+const detail3 = "/images/000_1771449544433.jpg";
+const extraImage1 = "/images/01_1771449544432.png";
+const extraImage2 = "/images/01_1771449544432.jpg";
+const extraImage3 = "/images/00_1771449544433.jpg";
 
 export default function LandingPage() {
   const { scrollYProgress } = useScroll();
@@ -35,15 +38,15 @@ export default function LandingPage() {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="text-2xl font-black tracking-tighter text-primary">
-            ORTHO<span className="text-gray-900">PRO</span>
+            TENIS<span className="text-gray-900">ORTOPEDICO</span>.COM.BR
           </div>
           
           <div className="hidden md:flex items-center gap-8">
-            <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">Benefits</a>
-            <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">Features</a>
-            <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Reviews</a>
+            <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">Benefícios</a>
+            <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">Tecnologia</a>
+            <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Depoimentos</a>
             <Button onClick={handleCheckout} className="bg-accent hover:bg-accent/90 text-white font-bold rounded-full px-6">
-              Buy Now
+              Comprar Agora
             </Button>
           </div>
 
@@ -66,8 +69,8 @@ export default function LandingPage() {
       </motion.header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-100/50 -skew-x-12 translate-x-1/4 z-0" />
+      <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 relative overflow-hidden bg-white">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-50/30 -skew-x-12 translate-x-1/4 z-0" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -76,14 +79,14 @@ export default function LandingPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary font-semibold text-sm mb-6">
-                <Star className="w-4 h-4 fill-current" /> #1 Rated Orthopedic Shoe 2024
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-primary font-semibold text-sm mb-6 border border-blue-100">
+                <ShieldCheck className="w-4 h-4" /> Recomendado por Ortopedistas
               </div>
-              <h1 className="text-5xl lg:text-7xl font-display font-extrabold text-gray-900 leading-[1.1] mb-6">
-                Say Goodbye to <span className="text-primary">Foot Pain</span> & Hello to Comfort.
+              <h1 className="text-5xl lg:text-7xl font-display font-extrabold text-gray-900 leading-[1.1] mb-6 tracking-tight">
+                Conforto Absoluto para seus <span className="text-primary">Pés</span>.
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
-                Experience cloud-like comfort with the specialized orthopedic design that corrects posture and relieves pain instantly.
+                Desenvolvido com tecnologia de amortecimento avançada para alívio imediato de dores e correção da postura. Sinta a diferença a cada passo.
               </p>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
@@ -96,13 +99,13 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={handleCheckout}
                   size="lg" 
                   className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-1 transition-all"
                 >
-                  Get Yours Today <ArrowRight className="ml-2 w-5 h-5" />
+                  Garantir Meu Tênis Agora <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <div className="flex items-center gap-4 text-sm font-medium text-gray-500 py-3 px-4">
                   <div className="flex -space-x-2">
@@ -114,7 +117,7 @@ export default function LandingPage() {
                   </div>
                   <div className="flex flex-col">
                     <div className="flex text-yellow-400 text-xs">★★★★★</div>
-                    <span>4,900+ Happy Walkers</span>
+                    <span>4,900+ Clientes Satisfeitos</span>
                   </div>
                 </div>
               </div>
@@ -227,10 +230,10 @@ export default function LandingPage() {
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-               <img src={detail1} alt="Detail view" className="rounded-2xl shadow-2xl transform translate-y-8" />
-               <img src={detail2} alt="Sole view" className="rounded-2xl shadow-2xl transform -translate-y-8" />
+               <img src={detail1} alt="Detalhe do solado" className="rounded-2xl shadow-2xl transform translate-y-8 object-cover aspect-square" />
+               <img src={detail2} alt="Vista lateral" className="rounded-2xl shadow-2xl transform -translate-y-8 object-cover aspect-square" />
                <div className="col-span-2">
-                 <img src={detail3} alt="Side view" className="w-full h-48 object-cover rounded-2xl shadow-2xl" />
+                 <img src={detail3} alt="Infográfico de detalhes" className="w-full h-auto object-contain rounded-2xl shadow-2xl" />
                </div>
             </div>
           </div>
@@ -368,11 +371,11 @@ export default function LandingPage() {
       <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
           <div className="text-2xl font-black tracking-tighter text-white mb-6">
-            ORTHO<span className="text-primary">PRO</span>
+            TENIS<span className="text-primary">ORTOPEDICO</span>.COM.BR
           </div>
           <p className="mb-8 text-sm">
-            © 2024 OrthoPro Shoes. All rights reserved.<br/>
-            Walking on clouds has never been this affordable.
+            © 2024 TenisOrtopedico.com.br. Todos os direitos reservados.<br/>
+            Caminhar nas nuvens nunca foi tão acessível.
           </p>
           <div className="flex justify-center gap-6 text-sm">
             <a href="#" className="hover:text-white">Privacy Policy</a>
