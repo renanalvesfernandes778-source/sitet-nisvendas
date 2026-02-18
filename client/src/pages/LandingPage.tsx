@@ -56,11 +56,11 @@ export default function LandingPage() {
             </SheetTrigger>
             <SheetContent>
               <div className="flex flex-col gap-6 mt-10">
-                <a href="#benefits" className="text-lg font-medium">Benefits</a>
-                <a href="#features" className="text-lg font-medium">Features</a>
-                <a href="#reviews" className="text-lg font-medium">Reviews</a>
+                <a href="#benefits" className="text-lg font-medium">Benefícios</a>
+                <a href="#features" className="text-lg font-medium">Tecnologia</a>
+                <a href="#reviews" className="text-lg font-medium">Depoimentos</a>
                 <Button onClick={handleCheckout} className="bg-accent text-white font-bold w-full">
-                  Buy Now
+                  Comprar Agora
                 </Button>
               </div>
             </SheetContent>
@@ -164,18 +164,18 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
-              Do Your Feet Ache After a Long Day?
+              Seus Pés Doem Após um Longo Dia?
             </h2>
             <p className="text-lg text-gray-600">
-              You're not alone. 78% of adults suffer from foot pain, plantar fasciitis, or knee discomfort caused by improper footwear. It drains your energy and limits your life.
+              Você não está sozinho. 78% dos adultos sofrem com dores nos pés, fascite plantar ou desconforto nos joelhos causado por calçados inadequados.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Plantar Fasciitis", desc: "Sharp heel pain that makes every step agony.", icon: "🦶" },
-              { title: "Knee & Back Pain", desc: "Misalignment starting from your feet affecting your whole body.", icon: "🦴" },
-              { title: "Swelling & Fatigue", desc: "Poor circulation leading to heavy, tired legs by evening.", icon: "⚡" }
+              { title: "Fascite Plantar", desc: "Dor aguda no calcanhar que torna cada passo uma agonia.", icon: "🦶" },
+              { title: "Dores no Joelho e Costas", desc: "O desalinhamento começa nos pés e afeta todo o seu corpo.", icon: "🦴" },
+              { title: "Inchaço e Fadiga", desc: "Má circulação levando a pernas pesadas e cansadas ao final do dia.", icon: "⚡" }
             ].map((item, i) => (
               <motion.div 
                 key={i}
@@ -200,21 +200,21 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-block px-3 py-1 bg-primary text-white text-xs font-bold rounded-full mb-4 uppercase tracking-widest">
-                The Technology
+                A Tecnologia
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Engineered for <span className="text-primary">Cloud-Like</span> Comfort
+                Engenharia para Conforto <span className="text-primary">Absoluto</span>
               </h2>
               <p className="text-gray-300 text-lg mb-8">
-                Our proprietary sole technology absorbs shock while correcting your stride, giving you the freedom to walk all day without pain.
+                Nossa tecnologia de solado absorve o impacto enquanto corrige sua pisada, proporcionando liberdade para caminhar o dia todo sem dor.
               </p>
 
               <div className="space-y-6">
                 {[
-                  { title: "Ergonomic Arch Support", desc: "Aligns feet to neutral position." },
-                  { title: "Shock Absorption Sole", desc: "Reduces impact on knees and joints." },
-                  { title: "Breathable Mesh", desc: "Keeps feet cool and dry all day." },
-                  { title: "Non-Slip Grip", desc: "Stability on any surface." }
+                  { title: "Suporte de Arco Ergonômico", desc: "Alinha os pés para uma posição neutra." },
+                  { title: "Solado com Absorção de Choque", desc: "Reduz o impacto nos joelhos e articulações." },
+                  { title: "Mesh Respirável", desc: "Mantém os pés frescos e secos o dia todo." },
+                  { title: "Grip Antiderrapante", desc: "Estabilidade total em qualquer superfície." }
                 ].map((feature, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="w-6 h-6 rounded-full bg-primary flex-shrink-0 flex items-center justify-center mt-1">
@@ -244,16 +244,16 @@ export default function LandingPage() {
       <section id="benefits" className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Why Thousands Choose OrthoPro</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Por que Milhares Escolhem o Tênis Ortopédico</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Pain Relief", icon: <Shield className="w-8 h-8 text-primary" /> },
-              { title: "Better Posture", icon: <Check className="w-8 h-8 text-primary" /> },
-              { title: "All-Day Comfort", icon: <Star className="w-8 h-8 text-primary" /> },
-              { title: "Improved Mobility", icon: <ArrowRight className="w-8 h-8 text-primary" /> }
+              { title: "Alívio de Dores", icon: <Shield className="w-8 h-8 text-primary" /> },
+              { title: "Melhor Postura", icon: <Check className="w-8 h-8 text-primary" /> },
+              { title: "Conforto Diário", icon: <Star className="w-8 h-8 text-primary" /> },
+              { title: "Mobilidade Ampliada", icon: <ArrowRight className="w-8 h-8 text-primary" /> }
             ].map((benefit, i) => (
               <motion.div 
                 key={i}
@@ -273,13 +273,13 @@ export default function LandingPage() {
       {/* Social Proof */}
       <section id="reviews" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Real People, Real Relief</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Pessoas Reais, Resultados Reais</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Maria S.", quote: "Best shoes I've ever bought! My plantar fasciitis pain vanished in 2 days.", role: "Nurse" },
-              { name: "Joao P.", quote: "Finally, no more back pain. I can stand for 8 hours without feeling destroyed.", role: "Teacher" },
-              { name: "Ana L.", quote: "Stylish enough for work, comfortable enough for a marathon. Obsessed!", role: "Retail Manager" }
+              { name: "Maria S.", quote: "Melhor tênis que já comprei! Minha dor de fascite plantar sumiu em 2 dias.", role: "Enfermeira" },
+              { name: "João P.", quote: "Finalmente, sem mais dores nas costas. Posso ficar em pé por 8 horas sem me sentir destruído.", role: "Professor" },
+              { name: "Ana L.", quote: "Elegante para o trabalho e confortável para o dia todo. Estou obcecada!", role: "Gerente de Vendas" }
             ].map((review, i) => (
               <div key={i} className="bg-gray-50 p-8 rounded-2xl relative">
                 <div className="absolute -top-4 left-8 text-6xl text-primary/20 font-serif">"</div>
@@ -307,8 +307,8 @@ export default function LandingPage() {
              <div className="flex flex-col md:flex-row items-center gap-6">
                 <ShieldCheck className="w-16 h-16 text-primary" />
                 <div className="text-left">
-                  <h3 className="text-2xl font-bold mb-1">15-Day Money-Back Guarantee</h3>
-                  <p className="text-gray-300">Try them risk-free. If you don't love them, we'll refund you 100%.</p>
+                  <h3 className="text-2xl font-bold mb-1">Garantia de Satisfação de 30 Dias</h3>
+                  <p className="text-gray-300">Experimente sem riscos. Se você não amar, devolvemos 100% do seu dinheiro.</p>
                 </div>
              </div>
           </div>
@@ -323,10 +323,10 @@ export default function LandingPage() {
             {/* Left Side: Offer Details */}
             <div className="md:w-1/2 p-8 md:p-12 bg-gray-50">
               <div className="inline-flex items-center gap-2 text-red-600 font-bold uppercase tracking-wider text-sm mb-4 animate-pulse">
-                <Clock className="w-4 h-4" /> Limited Time Offer
+                <Clock className="w-4 h-4" /> Oferta por Tempo Limitado
               </div>
               
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Final Sale Price</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Preço Promocional Final</h2>
               
               <div className="flex items-baseline gap-3 mb-6">
                 <span className="text-5xl font-black text-primary">R$136,50</span>
@@ -334,7 +334,7 @@ export default function LandingPage() {
               </div>
 
               <div className="mb-8">
-                <div className="text-sm font-semibold text-gray-600 mb-2">Offer expires in:</div>
+                <div className="text-sm font-semibold text-gray-600 mb-2">A oferta expira em:</div>
                 <CountdownTimer />
               </div>
 
@@ -343,19 +343,19 @@ export default function LandingPage() {
                   <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
                     <Truck className="w-4 h-4 text-green-600" />
                   </div>
-                  <span className="font-medium text-gray-700">Free Fast Shipping</span>
+                  <span className="font-medium text-gray-700">Frete Grátis para Todo Brasil</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
                     <ThumbsUp className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="font-medium text-gray-700">100% Satisfaction Guarantee</span>
+                  <span className="font-medium text-gray-700">100% de Satisfação Garantida</span>
                 </div>
               </div>
 
               <div className="p-4 bg-orange-50 border border-orange-100 rounded-lg text-orange-800 text-sm font-medium flex items-start gap-2">
                 <span className="text-xl">🔥</span> 
-                <span>High demand! Only 12 pairs left at this price.</span>
+                <span>Alta demanda! Apenas 12 pares restantes neste preço.</span>
               </div>
             </div>
 
