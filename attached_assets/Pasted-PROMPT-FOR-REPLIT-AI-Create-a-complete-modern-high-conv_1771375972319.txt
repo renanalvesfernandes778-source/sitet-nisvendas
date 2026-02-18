@@ -1,0 +1,124 @@
+PROMPT FOR REPLIT AI:
+
+Create a complete, modern, high-converting sales page website for a product called Orthopedic Shoes (2 Units) priced at R$136,50.
+
+Use clean, responsive HTML, CSS, and JavaScript (all in one project). The design must look professional, mobile-friendly, and optimized for conversions. Use a modern layout with strong typography, clear sections, persuasive copy, and call-to-action buttons throughout the page.
+
+The page must follow the AIDA structure (Attention, Interest, Desire, Action).
+
+Include the following sections:
+
+HERO SECTION (Attention)
+
+A powerful headline about foot pain relief.
+
+A persuasive subheadline.
+
+Product image placeholder.
+
+Price highlighted (R$136,50).
+
+Strong CTA button (“Buy Now”, “Get Yours Today”, etc.).
+
+Urgency badge like “Limited Time Offer”.
+
+PROBLEM SECTION (Interest)
+
+Talk about common foot pain, back pain, knee pain, plantar fasciitis, tired feet.
+
+Emotional storytelling.
+
+Make the reader feel understood.
+
+SOLUTION SECTION (Desire)
+
+Explain how the Orthopedic Shoes work:
+
+Arch support
+
+Shock absorption
+
+Ergonomic sole
+
+Posture alignment
+
+Lightweight and breathable material
+
+Focus on benefits over features.
+
+Use bullet points.
+
+BENEFITS SECTION
+
+Pain relief
+
+Better posture
+
+All-day comfort
+
+Improved mobility
+
+Reduced swelling
+
+More confidence walking
+
+SOCIAL PROOF SECTION
+
+3–5 realistic testimonials with names.
+
+Star ratings (★★★★★).
+
+Short but powerful reviews.
+
+GUARANTEE SECTION
+
+7-day or 15-day money-back guarantee.
+
+Risk-free purchase.
+
+Security reassurance.
+
+SCARCITY SECTION
+
+Limited stock warning.
+
+Countdown timer (use simple JavaScript).
+
+Urgency messaging.
+
+FINAL CALL TO ACTION
+
+Strong closing argument.
+
+Highlight price again: R$136,50.
+
+Large CTA button.
+
+Design Requirements:
+
+Modern gradient or clean white background.
+
+Soft shadows and rounded buttons.
+
+Highlight price in a contrasting color.
+
+Smooth scroll effect.
+
+Responsive for mobile and desktop.
+
+Use persuasive copywriting language.
+
+Make it look like a real professional e-commerce landing page.
+
+Tone:
+
+Emotional, persuasive, but natural.
+
+Written as if someone truly believes in the product.
+
+Highly conversion-focused.
+
+Do not mention shapewear or any other product.
+Focus only on Orthopedic Shoes.
+
+Make the page visually attractive and optimized to convert visitors into buyers.
