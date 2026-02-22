@@ -91,8 +91,8 @@ export default function LandingPage() {
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold text-gray-900">R$136,50</span>
-                  <span className="text-lg text-gray-400 line-through">R$199,80</span>
+                  <span className="text-4xl font-bold text-red-600">R$ 120,00</span>
+                  <span className="text-lg text-gray-400 line-through">R$ 199,90</span>
                 </div>
                 <div className="bg-red-100 text-red-600 px-3 py-1 rounded-md font-bold text-sm uppercase tracking-wide animate-pulse-slow">
                   Economize R$63,30
@@ -107,7 +107,7 @@ export default function LandingPage() {
                 <Button 
                   onClick={handleCheckout}
                   size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-1 transition-all"
+                  className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-1 transition-all animate-pulse"
                 >
                   Garantir Meu Tênis Agora <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
