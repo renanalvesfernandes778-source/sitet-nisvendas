@@ -130,7 +130,6 @@ export default function LandingPage() {
                         </Button>
                       </a>
                      </div>
-                   );
               <div className="relative z-10 animate-float">
                 <img 
                   src={heroImage} 
