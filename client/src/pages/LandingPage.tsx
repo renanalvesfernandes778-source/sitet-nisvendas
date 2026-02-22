@@ -33,11 +33,8 @@ export default function LandingPage() {
   }, []);
 
   const handleCheckout = () => {
-    const checkoutUrl = combo === "2"
-      ? "https://app.coinzz.com.br/checkout/2-unidade-z51sh-0"
-      : "https://app.coinzz.com.br/checkout/1-unidade-ljeta-0";
-    window.location.href = checkoutUrl;
-  };
+  
+    const topPrice = "99,90";
 
   const sizes = ["34", "35", "36", "37", "38", "39"];
 
@@ -102,53 +99,30 @@ export default function LandingPage() {
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold text-red-600">R$ 120,00</span>
+                  <span className="text-4xl font-bold text-red-600">R$ {topPrice}</span>
                   <span className="text-lg text-gray-400 line-through">R$ 199,90</span>
                 </div>
                 <div className="bg-red-100 text-red-600 px-3 py-1 rounded-md font-bold text-sm uppercase tracking-wide animate-pulse-slow">
                   Economize R$ 79,90
                 </div>
               </div>
-
-              <div className="mb-6 flex items-center gap-2 text-sm font-bold text-gray-700 bg-gray-100 p-2 rounded-lg inline-block">
                 <Clock className="w-4 h-4 text-red-600" />
                 <span>A oferta encerra em: <span className="text-red-600">14min 22s</span></span>
-              </div>
-              
-              <div className="mb-6 text-red-600 font-bold flex items-center gap-2 animate-bounce">
-                <span>🔥 Atenção: Restam apenas 7 unidades deste modelo em estoque!</span>
-              </div>
+                <div className="flex flex-col gap-4 mt-8">
+                      {/* Botão de 1 Unidade - R$ 99,90 */}
+                      <a href="https://app.coinzz.com.br/checkout/1-unidade-ljeta-0" target="_blank" rel="noopener noreferrer" className="w-full block">
+                        <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg w-full animate-pulse">
+                          Garantir 1 Par Agora <ArrowRight className="ml-2 w-5 h-5" />
+                        </Button>
+                      </a>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={handleCheckout}
-                  size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-1 transition-all animate-pulse"
-                >
-                  Garantir Meu Tênis Agora <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <div className="flex items-center gap-4 text-sm font-medium text-gray-500 py-3 px-4">
-                  <div className="flex -space-x-2">
-                    {[1,2,3,4].map(i => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="flex text-yellow-400 text-xs">★★★★★</div>
-                    <span>4,900+ Clientes Satisfeitos</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="relative"
-            >
+                      {/* Botão de 2 Unidades - R$ 128,00 */}
+                      <a href="https://app.coinzz.com.br/checkout/2-unidade-z51sh-0" target="_blank" rel="noopener noreferrer" className="w-full block">
+                        <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg font-bold px-8 py-6 rounded-xl w-full">
+                          Levar 2 Pares (Promoção) <ArrowRight className="ml-2 w-5 h-5" />
+                        </Button>
+                      </a>
+                     </div>
               <div className="relative z-10 animate-float">
                 <img 
                   src={heroImage} 
