@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Check, Star, Shield, Truck, ThumbsUp, Menu, X, Clock, ShieldCheck } from "lucide-react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { ArrowRight, Check, Star, Shield, Truck, ThumbsUp, Menu, X, Clock, ShieldCheck, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import { LeadForm } from "@/components/LeadForm";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
@@ -19,6 +22,9 @@ export default function LandingPage() {
   const { scrollYProgress } = useScroll();
   const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
   const [scrolled, setScrolled] = useState(false);
+  const [combo, setCombo] = useState("2");
+  const [size1, setSize1] = useState("37");
+  const [size2, setSize2] = useState("37");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -27,8 +33,13 @@ export default function LandingPage() {
   }, []);
 
   const handleCheckout = () => {
-    window.location.href = "https://app.coinzz.com.br/checkout/2-unidade-tzlyj-0";
+    const checkoutUrl = combo === "2" 
+      ? "https://app.coinzz.com.br/checkout/2-unidade-tzlyj-0" 
+      : "https://app.coinzz.com.br/checkout/1-unidade-tzlyj-0"; // Assuming there's a 1-unit link or similar
+    window.location.href = checkoutUrl;
   };
+
+  const sizes = ["34", "35", "36", "37", "38", "39"];
 
   return (
     <div className="min-h-screen font-sans bg-white selection:bg-primary/20">
@@ -367,50 +378,113 @@ export default function LandingPage() {
       {/* CTA / Order Section */}
       <section id="order-form" className="py-20 bg-gradient-to-br from-blue-50 to-white relative">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row">
-            
-            {/* Left Side: Offer Details */}
-            <div className="md:w-1/2 p-8 md:p-12 bg-gray-50">
-              <div className="inline-flex items-center gap-2 text-red-600 font-bold uppercase tracking-wider text-sm mb-4 animate-pulse">
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 p-8 md:p-12">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 italic uppercase font-display">Escolha sua Oferta</h2>
+              <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
+              <div className="inline-flex items-center gap-2 text-red-600 font-bold uppercase tracking-wider text-sm animate-pulse">
                 <Clock className="w-4 h-4" /> Oferta por Tempo Limitado
-              </div>
-              
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Preço Promocional Final</h2>
-              
-              <div className="flex items-baseline gap-3 mb-6">
-                <span className="text-5xl font-black text-primary">R$136,50</span>
-                <span className="text-xl text-gray-400 line-through">R$273,00</span>
-              </div>
-
-              <div className="mb-8">
-                <div className="text-sm font-semibold text-gray-600 mb-2">A oferta expira em:</div>
-                <CountdownTimer />
-              </div>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                    <Truck className="w-4 h-4 text-green-600" />
-                  </div>
-                  <span className="font-medium text-gray-700">Entrega Garantida via Correios com código de rastreio</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                    <ThumbsUp className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="font-medium text-gray-700">Satisfação Garantida ou seu Dinheiro de Volta</span>
-                </div>
-              </div>
-
-              <div className="p-4 bg-orange-50 border border-orange-100 rounded-lg text-orange-800 text-sm font-medium flex items-start gap-2">
-                <span className="text-xl">🔥</span> 
-                <span>Alta demanda! Apenas 12 pares restantes neste preço.</span>
               </div>
             </div>
 
-            {/* Right Side: Form */}
-            <div className="md:w-1/2">
-              <LeadForm />
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div className="space-y-6">
+                <RadioGroup value={combo} onValueChange={setCombo} className="space-y-4">
+                  <div 
+                    className={`relative flex items-center justify-between p-6 rounded-2xl border-2 transition-all cursor-pointer ${combo === "1" ? "border-primary bg-blue-50/50" : "border-gray-100 hover:border-gray-200"}`}
+                    onClick={() => setCombo("1")}
+                  >
+                    <div className="flex items-center gap-4">
+                      <RadioGroupItem value="1" id="r1" />
+                      <Label htmlFor="r1" className="text-lg font-bold cursor-pointer">Leve 1 Tênis</Label>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-black text-gray-900">R$ 99,90</div>
+                    </div>
+                  </div>
+
+                  <div 
+                    className={`relative flex items-center justify-between p-6 rounded-2xl border-2 transition-all cursor-pointer ${combo === "2" ? "border-accent bg-accent/5 shadow-md" : "border-gray-100 hover:border-gray-200"}`}
+                    onClick={() => setCombo("2")}
+                  >
+                    <div className="absolute -top-3 left-6 bg-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Mais Vendido</div>
+                    <div className="flex items-center gap-4">
+                      <RadioGroupItem value="2" id="r2" />
+                      <div className="flex flex-col">
+                        <Label htmlFor="r2" className="text-lg font-bold cursor-pointer text-accent">PROMOÇÃO: Leve 2 Tênis</Label>
+                        <span className="text-xs text-gray-500 font-medium">Economia Máxima</span>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-black text-accent">R$ 128,00</div>
+                      <div className="text-xs text-gray-400 line-through">R$ 199,80</div>
+                    </div>
+                  </div>
+                </RadioGroup>
+
+                <div className="space-y-4 pt-4 border-t border-gray-50">
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                    <Truck className="w-4 h-4 text-green-600" />
+                    <span>Entrega Garantida via Correios</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                    <ShieldCheck className="w-4 h-4 text-primary" />
+                    <span>Pagamento 100% Seguro</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                <h3 className="text-xl font-bold mb-6 text-gray-900 flex items-center gap-2">
+                  <ShoppingCart className="w-5 h-5 text-primary" /> Selecione o Tamanho
+                </h3>
+                
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <Label className="text-sm font-bold text-gray-700">{combo === "2" ? "Tamanho do Tênis 1:" : "Tamanho do Tênis:"}</Label>
+                    <Select value={size1} onValueChange={setSize1}>
+                      <SelectTrigger className="bg-white border-gray-200 h-12 rounded-xl">
+                        <SelectValue placeholder="Selecione o tamanho" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {sizes.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <AnimatePresence>
+                    {combo === "2" && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="space-y-2 overflow-hidden"
+                      >
+                        <Label className="text-sm font-bold text-gray-700">Tamanho do Tênis 2:</Label>
+                        <Select value={size2} onValueChange={setSize2}>
+                          <SelectTrigger className="bg-white border-gray-200 h-12 rounded-xl">
+                            <SelectValue placeholder="Selecione o tamanho" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {sizes.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                          </SelectContent>
+                        </Select>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <Button 
+                    onClick={handleCheckout}
+                    className="w-full bg-accent hover:bg-accent/90 text-white text-xl font-black py-8 rounded-2xl shadow-xl shadow-accent/20 transition-all hover:-translate-y-1 active:scale-95 animate-pulse mt-4 uppercase italic tracking-tighter"
+                  >
+                    Finalizar Compra <ArrowRight className="ml-2 w-6 h-6" />
+                  </Button>
+                  
+                  <div className="text-center">
+                    <p className="text-[10px] text-gray-400 font-medium">🔒 Transação criptografada e 100% segura.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
