@@ -113,41 +113,24 @@ export default function LandingPage() {
                   Economize R$ 79,90
                 </div>
               </div>
-
-              <div className="mb-6 flex items-center gap-2 text-sm font-bold text-gray-700 bg-gray-100 p-2 rounded-lg inline-block">
                 <Clock className="w-4 h-4 text-red-600" />
                 <span>A oferta encerra em: <span className="text-red-600">14min 22s</span></span>
-              </div>
-              
-              <div className="mb-6 text-red-600 font-bold flex items-center gap-2 animate-bounce">
-                <span>🔥 Atenção: Restam apenas 7 unidades deste modelo em estoque!</span>
-              </div>
+                <div className="flex flex-col gap-4 mt-8">
+                      {/* Botão de 1 Unidade - R$ 99,90 */}
+                      <a href="https://app.coinzz.com.br/checkout/1-unidade-ljeta-0" target="_blank" rel="noopener noreferrer" className="w-full block">
+                        <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg w-full animate-pulse">
+                          Garantir 1 Par Agora <ArrowRight className="ml-2 w-5 h-5" />
+                        </Button>
+                      </a>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex flex-col gap-4">
-                {/* Botão de 1 Unidade - R$ 99,90 */}
-                <a href="https://app.coinzz.com.br/checkout/1-unidade-ljeta-0" className="w-full">
-                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg w-full animate-pulse">
-                    Garantir 1 Par Agora <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </a>
-
-                {/* Botão de 2 Unidades - R$ 128,00 */}
-                <a href="https://app.coinzz.com.br/checkout/2-unidades-ljeta-0" className="w-full">
-                  <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg font-bold px-8 py-6 rounded-xl w-full">
-                    Levar 2 Pares (Promoção) <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </a>
-              </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="flex text-yellow-400 text-xs">★★★★★</div>
-                    <span>4,900+ Clientes Satisfeitos</span>
-                  </div>
-                </div>
-              </div>
+                      {/* Botão de 2 Unidades - R$ 128,00 */}
+                      <a href="https://app.coinzz.com.br/checkout/2-unidades-ljeta-0" target="_blank" rel="noopener noreferrer" className="w-full block">
+                        <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg font-bold px-8 py-6 rounded-xl w-full">
+                          Levar 2 Pares (Promoção) <ArrowRight className="ml-2 w-5 h-5" />
+                        </Button>
+                      </a>
+                    </div>
+                  );
             </motion.div>
 
             <motion.div 
