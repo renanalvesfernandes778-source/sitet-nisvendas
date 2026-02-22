@@ -33,8 +33,10 @@ export default function LandingPage() {
   }, []);
 
   const handleCheckout = () => {
-  
-    const topPrice = "99,90";
+    const checkoutUrl = combo === "2"
+      ? "https://app.coinzz.com.br/checkout/2-unidade-z51sh-0"
+      : "https://app.coinzz.com.br/checkout/1-unidade-ljeta-0";
+    window.location.href = checkoutUrl;
 
   const sizes = ["34", "35", "36", "37", "38", "39"];
 
