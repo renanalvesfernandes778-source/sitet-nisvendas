@@ -44,3 +44,6 @@ waitForPort = 5000
 [userenv.shared]
 VITE_CHECKOUT_LINK_99_90 = "https://app.coinzz.com.br/checkout/1-unidade-tzlyj-0"
 VITE_CHECKOUT_LINK_128_00 = "https://app.coinzz.com.br/checkout/2-unidade-tzlyj-0"
+
+[agent]
+expertMode = true
