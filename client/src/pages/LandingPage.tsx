@@ -124,7 +124,7 @@ export default function LandingPage() {
                       </a>
 
                       {/* Botão de 2 Unidades - R$ 128,00 */}
-                      <a href="https://app.coinzz.com.br/checkout/2-unidades-ljeta-0" target="_blank" rel="noopener noreferrer" className="w-full block">
+                      <a href="https://app.coinzz.com.br/checkout/2-unidade-z51sh-0" target="_blank" rel="noopener noreferrer" className="w-full block">
                         <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg font-bold px-8 py-6 rounded-xl w-full">
                           Levar 2 Pares (Promoção) <ArrowRight className="ml-2 w-5 h-5" />
                         </Button>
