@@ -129,16 +129,8 @@ export default function LandingPage() {
                           Levar 2 Pares (Promoção) <ArrowRight className="ml-2 w-5 h-5" />
                         </Button>
                       </a>
-                    </div>
-                  );
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="relative"
-            >
+                     </div>
+                   );
               <div className="relative z-10 animate-float">
                 <img 
                   src={heroImage} 
