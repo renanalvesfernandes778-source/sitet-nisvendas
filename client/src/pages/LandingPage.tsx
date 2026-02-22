@@ -37,8 +37,8 @@ export default function LandingPage() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <div className="text-2xl font-black tracking-tighter text-primary">
-            TENIS<span className="text-gray-900">ORTOPEDICO</span>.COM.BR
+          <div className="text-2xl font-black tracking-tighter text-primary font-display uppercase italic">
+            OUTLET <span className="text-gray-900">CONFORTO</span> ORTOPÉDICO
           </div>
           
           <div className="hidden md:flex items-center gap-8">
@@ -97,6 +97,10 @@ export default function LandingPage() {
                 <div className="bg-red-100 text-red-600 px-3 py-1 rounded-md font-bold text-sm uppercase tracking-wide animate-pulse-slow">
                   Economize R$63,30
                 </div>
+              </div>
+              
+              <div className="mb-6 text-red-600 font-bold flex items-center gap-2 animate-bounce">
+                <span>🔥 Atenção: Restam apenas 7 unidades deste modelo em estoque!</span>
               </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -277,16 +281,16 @@ export default function LandingPage() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Maria S.", quote: "Melhor tênis que já comprei! Minha dor de fascite plantar sumiu em 2 dias.", role: "Enfermeira" },
-              { name: "João P.", quote: "Finalmente, sem mais dores nas costas. Posso ficar em pé por 8 horas sem me sentir destruído.", role: "Professor" },
-              { name: "Ana L.", quote: "Elegante para o trabalho e confortável para o dia todo. Estou obcecada!", role: "Gerente de Vendas" }
+              { name: "Maria S.", quote: "Melhor tênis que já comprei! Minha dor de fascite plantar sumiu em 2 dias. Posso caminhar sem sentir pontadas.", role: "Enfermeira" },
+              { name: "João P.", quote: "Finalmente, sem mais dores nas costas e pés. Fico 8 horas em pé na escola e chego em casa descansado. 100% recomendado!", role: "Professor" },
+              { name: "Ana L.", quote: "Elegante para o trabalho e o conforto é inexplicável. Minhas dores crônicas nos pés simplesmente acabaram!", role: "Gerente de Vendas" }
             ].map((review, i) => (
-              <div key={i} className="bg-gray-50 p-8 rounded-2xl relative">
+              <div key={i} className="bg-gray-50 p-8 rounded-2xl relative border border-gray-100 shadow-sm">
                 <div className="absolute -top-4 left-8 text-6xl text-primary/20 font-serif">"</div>
                 <div className="flex text-yellow-400 mb-4">★★★★★</div>
                 <p className="text-gray-700 mb-6 italic relative z-10">{review.quote}</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary">
                     {review.name[0]}
                   </div>
                   <div>
@@ -370,11 +374,21 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <div className="text-2xl font-black tracking-tighter text-white mb-6">
-            TENIS<span className="text-primary">ORTOPEDICO</span>.COM.BR
+          <div className="text-2xl font-black tracking-tighter text-white mb-4 font-display uppercase italic">
+            OUTLET <span className="text-primary">CONFORTO</span> ORTOPÉDICO
           </div>
-          <p className="mb-8 text-sm">
-            © 2024 TenisOrtopedico.com.br. Todos os direitos reservados.<br/>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6 text-sm font-medium text-gray-300">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-green-500" />
+              <span>🔒 Site Seguro - Criptografia SSL</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <ThumbsUp className="w-5 h-5 text-primary" />
+              <span>Garantia de Satisfação: 30 dias ou seu dinheiro de volta</span>
+            </div>
+          </div>
+          <p className="mb-8 text-xs text-gray-500">
+            © 2024 Outlet Conforto Ortopédico. Todos os direitos reservados.<br/>
             Caminhar nas nuvens nunca foi tão acessível.
           </p>
           <div className="flex justify-center gap-6 text-sm">
