@@ -34,8 +34,8 @@ export default function LandingPage() {
 
   const handleCheckout = () => {
     const checkoutUrl = combo === "2"
-      ? "https://app.coinzz.com.br/checkout/1-unidade-ljeta-0"
-      : "https://app.coinzz.com.br/checkout/2-unidade-z51sh-0";
+      ? "https://app.coinzz.com.br/checkout/2-unidade-z51sh-0"
+      : "https://app.coinzz.com.br/checkout/1-unidade-ljeta-0";
     window.location.href = checkoutUrl;
   };
 
