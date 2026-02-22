@@ -34,10 +34,14 @@ export default function LandingPage() {
 
   const handleCheckout = () => {
     const checkoutUrl = combo === "2" 
-      ? "https://app.coinzz.com.br/checkout/2-unidade-tzlyj-0" 
-      : "https://app.coinzz.com.br/checkout/1-unidade-tzlyj-0"; // Assuming there's a 1-unit link or similar
-    window.location.href = checkoutUrl;
+      ? import.meta.env.VITE_CHECKOUT_LINK_128_00 
+      : import.meta.env.VITE_CHECKOUT_LINK_99_90;
+    if (checkoutUrl) {
+      window.location.href = checkoutUrl;
+    }
   };
+
+  const topPrice = "99,90";
 
   const sizes = ["34", "35", "36", "37", "38", "39"];
 
@@ -102,7 +106,7 @@ export default function LandingPage() {
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold text-red-600">R$ 120,00</span>
+                  <span className="text-4xl font-bold text-red-600">R$ {topPrice}</span>
                   <span className="text-lg text-gray-400 line-through">R$ 199,90</span>
                 </div>
                 <div className="bg-red-100 text-red-600 px-3 py-1 rounded-md font-bold text-sm uppercase tracking-wide animate-pulse-slow">
