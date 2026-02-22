@@ -124,18 +124,21 @@ export default function LandingPage() {
               </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={handleCheckout}
-                  size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-1 transition-all animate-pulse"
-                >
-                  Garantir Meu Tênis Agora <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <div className="flex items-center gap-4 text-sm font-medium text-gray-500 py-3 px-4">
-                  <div className="flex -space-x-2">
-                    {[1,2,3,4].map(i => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
+              <div className="flex flex-col gap-4">
+                {/* Botão de 1 Unidade - R$ 99,90 */}
+                <a href="https://app.coinzz.com.br/checkout/1-unidade-ljeta-0" className="w-full">
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg font-bold px-8 py-6 rounded-xl shadow-lg w-full animate-pulse">
+                    Garantir 1 Par Agora <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </a>
+
+                {/* Botão de 2 Unidades - R$ 128,00 */}
+                <a href="https://app.coinzz.com.br/checkout/2-unidades-ljeta-0" className="w-full">
+                  <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg font-bold px-8 py-6 rounded-xl w-full">
+                    Levar 2 Pares (Promoção) <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </a>
+              </div>
                       </div>
                     ))}
                   </div>
