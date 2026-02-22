@@ -89,14 +89,19 @@ export default function LandingPage() {
                 Desenvolvido com tecnologia de amortecimento avançada para alívio imediato de dores e correção da postura. Sinta a diferença a cada passo.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-bold text-red-600">R$ 120,00</span>
                   <span className="text-lg text-gray-400 line-through">R$ 199,90</span>
                 </div>
                 <div className="bg-red-100 text-red-600 px-3 py-1 rounded-md font-bold text-sm uppercase tracking-wide animate-pulse-slow">
-                  Economize R$63,30
+                  Economize R$ 79,90
                 </div>
+              </div>
+
+              <div className="mb-6 flex items-center gap-2 text-sm font-bold text-gray-700 bg-gray-100 p-2 rounded-lg inline-block">
+                <Clock className="w-4 h-4 text-red-600" />
+                <span>A oferta encerra em: <span className="text-red-600">14min 22s</span></span>
               </div>
               
               <div className="mb-6 text-red-600 font-bold flex items-center gap-2 animate-bounce">
@@ -159,6 +164,46 @@ export default function LandingPage() {
                 </div>
               </motion.div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Real - Marketplace Style */}
+      <section className="py-16 bg-gray-50 border-y border-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold mb-8 text-center text-gray-900">Avaliações de Clientes</h2>
+          <div className="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600">R</div>
+              <div>
+                <div className="font-bold text-gray-900">regiacsilva</div>
+                <div className="flex text-yellow-400 text-sm">★★★★★</div>
+              </div>
+            </div>
+            <p className="text-gray-700 mb-4 italic leading-relaxed">
+              "Eu calço 37/38, pedi tamanho 37 e ficou perfeito no pé. Chegou bem embalado e em perfeito estado."
+            </p>
+            <div className="rounded-lg overflow-hidden border border-gray-100">
+              <img src="/images/regiacsilva.jpeg" alt="Feedback regiacsilva" className="w-full h-auto max-w-md mx-auto" />
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            {[
+              { name: "julianacotinovis", img: "/images/review2.jpeg", text: "Eu estou APAIXONADA. Simplesmente maravilhoso..." },
+              { name: "ellen0197", img: "/images/review3.jpeg", text: "Bem bonito, eu pedi um número a mais..." },
+              { name: "annynhagaspar35", img: "/images/review4.jpeg", text: "Produto de ótima qualidade adoreiiiiii..." }
+            ].map((rev, i) => (
+              <div key={i} className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-xs font-bold text-gray-500">{rev.name[0].toUpperCase()}</div>
+                  <div className="text-xs font-bold">{rev.name}</div>
+                </div>
+                <div className="flex text-yellow-400 text-[10px] mb-2">★★★★★</div>
+                <p className="text-[11px] text-gray-600 mb-3 line-clamp-2">"{rev.text}"</p>
+                <img src={rev.img} alt={`Review ${i}`} className="w-full h-24 object-cover rounded" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -347,13 +392,13 @@ export default function LandingPage() {
                   <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
                     <Truck className="w-4 h-4 text-green-600" />
                   </div>
-                  <span className="font-medium text-gray-700">Frete Grátis para Todo Brasil</span>
+                  <span className="font-medium text-gray-700">Entrega Garantida via Correios com código de rastreio</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
                     <ThumbsUp className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="font-medium text-gray-700">100% de Satisfação Garantida</span>
+                  <span className="font-medium text-gray-700">Satisfação Garantida ou seu Dinheiro de Volta</span>
                 </div>
               </div>
 
